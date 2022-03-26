@@ -1,0 +1,77 @@
+@import "./_globals.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #414141;
+  height: 100vh;
+  background: linear-gradient(
+    40deg,
+    $primary-color 0%,
+    $secundary-color 50%,
+    $third-color 100%
+  );
+  background-repeat: no-repeat;
+}
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.main {
+  background-color: rgba(white, 0.7);
+  border: 2px solid white;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 10vh;
+
+  &_list {
+    color: $secundary-color;
+    list-style-type: none;
+    padding: 20px;
+    label input {
+      margin-right: 10px;
+    }
+  }
+  &_subtitle {
+    margin-top: 10px;
+    margin-bottom: -5px;
+    color: $primary-color;
+    text-align: center;
+  }
+  &_title {
+    color: $secundary-color;
+    text-align: center;
+  }
+
+  &_container {
+    color: $secundary-color;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+.result {
+  &_true {
+    color: $primary-color;
+    font-weight: bold;
+  }
+  &_false {
+    color: $text-primary-color;
+    font-weight: bold;
+  }
+  &_number {
+    font-weight: bold;
+  }
+}
+
+#result {
+  padding-top: 10px;
+}
