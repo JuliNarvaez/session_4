@@ -1,16 +1,15 @@
-import { isEven } from "./isEven.js";
-import { isDivisibleByTen } from "./isDivisibleByTen.js";
+import { isEven } from '../../utils/isEven.js';
+import { isDivisibleByTen } from '../../utils/isDivisibleByTen.js';
+import Scaffold from '../scaffold/Scaffold';
 
 function Session3() {
   return (
-    <div className="main">
-      <h3 className="main_subtitle">Mentorship - Session 3:</h3>
-      <h1 className="main_title">JS Basics and ES6</h1>
+    <Scaffold subTitle="Mentorship - Session 3:" mainTitle="JS Basics and ES6">
       <div className="main_container">
         <p>
           <strong>
-            Introduce a number and check if is{" "}
-            <span className="result_true">EVEN</span> or{" "}
+            Introduce a number and check if is{' '}
+            <span className="result_true">EVEN</span> or{' '}
             <span className="result_false">ODD</span> and if is divisible by 10.
           </strong>
         </p>
@@ -23,12 +22,12 @@ function Session3() {
         <span>↵</span>
         <div id="result"></div>
       </div>
-    </div>
+    </Scaffold>
   );
 }
 
 function handleKeyUp(e) {
-  if (e.key === "Enter") {
+  if (e.key === 'Enter') {
     const inputValue = e.target.value;
     reportResult(detectNumber(numberObject(inputValue)));
     const numberProps = numberObject(inputValue);
@@ -62,7 +61,7 @@ function detectNumber(object) {
 }
 
 function reportResult(resultText) {
-  document.getElementById("result").innerHTML = `<p>${resultText}</p>`;
+  document.getElementById('result').innerHTML = `<p>${resultText}</p>`;
 }
 
 export default Session3;

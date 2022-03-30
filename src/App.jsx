@@ -1,5 +1,5 @@
-import Session2 from "./Session2";
-import Session3 from "./Session3";
+import Session2 from './components/session2/Session2';
+import Session3 from './components/session3/Session3';
 
 function App() {
   return (
