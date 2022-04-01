@@ -1,3 +1,4 @@
+// dumb component
 export default function Scaffold(props) {
   return (
     <div className="main">
