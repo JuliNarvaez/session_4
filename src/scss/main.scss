@@ -3,20 +3,17 @@
 * {
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #414141;
-  height: 100vh;
   background: linear-gradient(
     40deg,
     $primary-color 0%,
     $secundary-color 50%,
     $third-color 100%
   );
-  background-repeat: no-repeat;
+  background-size: cover;
 }
 .container {
   display: flex;
@@ -30,7 +27,7 @@ body {
   max-width: 400px;
   border-radius: 10px;
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 20px;
 
   &_list {
     color: $secundary-color;
@@ -54,11 +51,13 @@ body {
   &_container {
     color: $secundary-color;
     padding: 20px;
-    text-align: center;
+    &--center {
+      text-align: center;
+    }
   }
 }
 
-.result {
+.color {
   &_true {
     color: $primary-color;
     font-weight: bold;
@@ -68,6 +67,7 @@ body {
     font-weight: bold;
   }
   &_number {
+    color: $secundary-color;
     font-weight: bold;
   }
 }

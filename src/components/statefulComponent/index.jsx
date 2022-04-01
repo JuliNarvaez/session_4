@@ -11,7 +11,7 @@ export default function StatefulComponent() {
 
   useEffect(() => {
     if (modifyTitle) document.title = `Times clicked: ${count}`;
-  }, [modifyTitle]);
+  }, [modifyTitle, count]); // React Hook useEffect has a missing dependency: 'count'. Either include it or remove the dependency array
 
   return (
     <Scaffold>

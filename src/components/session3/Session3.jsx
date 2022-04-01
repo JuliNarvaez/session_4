@@ -5,12 +5,12 @@ import Scaffold from '../scaffold/Scaffold';
 function Session3() {
   return (
     <Scaffold subTitle="Mentorship - Session 3:" mainTitle="JS Basics and ES6">
-      <div className="main_container">
+      <div className="main_container--center">
         <p>
           <strong>
             Introduce a number and check if is{' '}
-            <span className="result_true">EVEN</span> or{' '}
-            <span className="result_false">ODD</span> and if is divisible by 10.
+            <span className="color_true">EVEN</span> or{' '}
+            <span className="color_false">ODD</span> and if is divisible by 10.
           </strong>
         </p>
         <input
@@ -49,14 +49,14 @@ function numberObject(number) {
 }
 
 function detectNumber(object) {
-  return `The number <span class="result_number">${object.number}</span> is ${
+  return `The number <span class="color_number">${object.number}</span> is ${
     object.isEven
-      ? '<span class="result_true">EVEN</span>'
-      : '<span class="result_false">ODD</span>'
+      ? '<span class="color_true">EVEN</span>'
+      : '<span class="color_false">ODD</span>'
   } and ${
     object.isDivisibleByTen
-      ? '<span class="result_true"> is divisible by 10</span>'
-      : '<span class="result_false">isn\'t divisible by 10</span>'
+      ? '<span class="color_true"> is divisible by 10</span>'
+      : '<span class="color_false">isn\'t divisible by 10</span>'
   }.`;
 }
 
