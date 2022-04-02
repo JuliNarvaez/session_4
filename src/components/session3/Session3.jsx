@@ -49,7 +49,7 @@ function numberObject(number) {
 }
 
 function detectNumber(object) {
-  return `The number <span class="color_number">${object.number}</span> is ${
+  return `The number <span class="color">${object.number}</span> is ${
     object.isEven
       ? '<span class="color_true">EVEN</span>'
       : '<span class="color_false">ODD</span>'

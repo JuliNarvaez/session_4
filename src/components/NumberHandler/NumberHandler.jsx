@@ -9,7 +9,7 @@ export default function NumberHandler () {
         setCount((prevNumber) => prevNumber +1)
     }
     const decreaseCount = () => {
-        setCount((prevNumber) => prevNumber -1)
+        setCount((prevNumber) => prevNumber <=0 ? prevNumber = 0 : prevNumber -1)
     }
 
     return (
