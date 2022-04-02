@@ -1,7 +1,7 @@
-export default function NumberButton () {
+export default function NumberButton (props) {
     return (
-    <button>
-        Increment Number
+    <button onClick={props.funcType}>
+        {props.buttonName}
     </button>
     );
 }
