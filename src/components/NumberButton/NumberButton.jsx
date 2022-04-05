@@ -1,7 +1,8 @@
-export default function NumberButton (props) {
-    return (
-    <button className= "button" onClick={props.funcType}>
-        {props.buttonName}
+export default function NumberButton({ funcType, buttonName }) {
+  return (
+    <button className="button" onClick={funcType}>
+      {buttonName}
     </button>
-    );
+  );
 }
+

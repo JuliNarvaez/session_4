@@ -1,5 +1,10 @@
-export default function NumberDisplay (props) {
-    return (
-       <span className="color_number"><strong><h3>{props.number}</h3></strong></span>
-    );
+export default function NumberDisplay({ children }) {
+  return (
+    <span className="color_number">
+      <strong>
+        <h3>{children}</h3>
+      </strong>
+    </span>
+  );
 }
+
