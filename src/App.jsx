@@ -4,6 +4,7 @@ import Session3 from './components/session3/Session3';
 import NumberHandler from './components/NumberHandler/NumberHandler';
 /* import Form from './components/syntethicEvent'; */
 import Session7 from './components/Session7/Session7';
+import ThemeProvider from './providers/ThemeProvider';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <NumberHandler></NumberHandler>
       {/* <Form /> */}
       <Session7 />
+      <ThemeProvider />
     </div>
   );
 }
