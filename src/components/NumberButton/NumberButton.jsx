@@ -1,8 +1,7 @@
-export default function NumberButton({ funcType, buttonName }) {
+export default function NumberButton({ onClick, buttonName }) {
   return (
-    <button className="button" onClick={funcType}>
+    <button className="button" onClick={onClick}>
       {buttonName}
     </button>
   );
 }
-

@@ -1,24 +1,11 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { AppContext } from '../../providers/AppProvider';
 import NumberButton from '../NumberButton/NumberButton';
-import NumberDisplay from '../NumberDisplay/NumberDisplay';
+import CountDisplay from '../CountDisplay/CountDisplay';
 import Scaffold from '../scaffold/Scaffold';
 
 export default function NumberHandler() {
-  const [count, setCount] = useState(0);
-  // const [specialObject, setSpecialObject] = useState({ key1: 'hello' });
-
-  // const modifyObject = () =>
-  //   setSpecialObject((prevObject) => {
-  //     return { ...prevObject, key2: 'world' };
-  //   });
-  const incrementCount = (e) => {
-    console.log(e);
-    setCount((prevNumber) => prevNumber + 1);
-  };
-
-  const decreaseCount = (e) => {
-    setCount((prevNumber) => (prevNumber <= 0 ? 0 : prevNumber - 1));
-  };
+  const { incrementCount, decreaseCount } = useContext(AppContext);
 
   return (
     <Scaffold
@@ -26,9 +13,9 @@ export default function NumberHandler() {
       mainTitle="useState and useEffect"
     >
       <div className="main_container--center">
-        <NumberDisplay>{count}</NumberDisplay>
-        <NumberButton buttonName="Increase Number" funcType={incrementCount} />
-        <NumberButton buttonName="Decrease Number" funcType={decreaseCount} />
+        <CountDisplay />
+        <NumberButton buttonName="Increase Number" onClick={incrementCount} />
+        <NumberButton buttonName="Decrease Number" onClick={decreaseCount} />
       </div>
     </Scaffold>
   );
