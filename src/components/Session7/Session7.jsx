@@ -4,9 +4,18 @@ import InputConst from '../Inputs/InputConst';
 import { Session7Context } from '../../providers/Session7Provider';
 
 export default function Session7() {
-  const { evenMessage, divisibleMessage, handleNum, numValue, isShowing } = useContext(Session7Context);
+  const { handleNum, numValue, isShowing, isNumDivByTen, isNumEven } = useContext(Session7Context);
 
-  console.log(numValue);
+  const evenMessage = () => {
+    if (isNumEven) return <span className="color_true">EVEN</span>;
+    return <span className="color_false">ODD</span>;
+  };
+
+  const divisibleMessage = () => {
+    if (isNumDivByTen)
+      return <span className="color_true"> is divisible by 10</span>;
+    return <span className="color_false">isn't divisible by 10</span>;
+  };
 
   return (
     <Scaffold subTitle="Mentorship - Session 7" mainTitle="Handling Events">

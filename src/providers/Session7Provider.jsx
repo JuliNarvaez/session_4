@@ -4,15 +4,18 @@ import { isDivisibleByTen } from "../utils/isDivisibleByTen";
 
 const initialNumber = {
     numValue: 0,
+    isNumEven: false,
+    isNumDivByTen: false,
+    isShowing: false
 };
 
 export const Session7Context = createContext(initialNumber);
 
 const Session7Provider = ({ children }) => {
-    const [numValue, setNumValue] = useState(0);
-    const [isNumEven, setNumEven] = useState(false);
-    const [isNumDivByTen, setNumDivByTen] = useState(false);
-    const [isShowing, setIsShowing] = useState(false);
+    const [numValue, setNumValue] = useState(initialNumber.numValue);
+    const [isNumEven, setNumEven] = useState(initialNumber.isNumEven);
+    const [isNumDivByTen, setNumDivByTen] = useState(initialNumber.isNumDivByTen);
+    const [isShowing, setIsShowing] = useState(initialNumber.isShowing);
 
     function handleNum({ code, target }) {
         if (isShowing) setIsShowing(false);
@@ -26,19 +29,8 @@ const Session7Provider = ({ children }) => {
         }
     }
 
-    const evenMessage = () => {
-        if (isNumEven) return <span className="color_true">EVEN</span>;
-        return <span className="color_false">ODD</span>;
-    };
-
-    const divisibleMessage = () => {
-        if (isNumDivByTen)
-            return <span className="color_true"> is divisible by 10</span>;
-        return <span className="color_false">isn't divisible by 10</span>;
-    };
-
     return (
-        <Session7Context.Provider value={{ ...numValue, handleNum, evenMessage, divisibleMessage, isShowing }}>
+        <Session7Context.Provider value={{ numValue, handleNum, isNumDivByTen, isNumEven, isShowing }}>
             {children}
         </Session7Context.Provider>
     )
