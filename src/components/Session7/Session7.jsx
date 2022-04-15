@@ -1,39 +1,12 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Scaffold from '../scaffold/Scaffold';
-import { isEven } from '../../utils/isEven';
-import { isDivisibleByTen } from '../../utils/isDivisibleByTen';
 import InputConst from '../Inputs/InputConst';
+import { Session7Context } from '../../providers/Session7Provider';
 
 export default function Session7() {
-  const [numValue, setNumValue] = useState(0);
-  const [isNumEven, setNumEven] = useState(false);
-  const [isNumDivByTen, setNumDivByTen] = useState(false);
-  const [isShowing, setIsShowing] = useState(false);
+  const { evenMessage, divisibleMessage, handleNum, numValue, isShowing } = useContext(Session7Context);
 
-  function handleNum({ code, target }) {
-    if (isShowing) setIsShowing(false);
-    if (code === 'Enter') {
-      const numberValue = Number(target.value);
-
-      setNumValue(numberValue);
-      setNumDivByTen(isDivisibleByTen(numberValue));
-      setNumEven(isEven(numberValue));
-      setIsShowing(true);
-    }
-  }
-
-  const evenMessage = () => {
-    if (isNumEven) return <span className="color_true">EVEN</span>;
-
-    return <span className="color_false">ODD</span>;
-  };
-
-  const divisibleMessage = () => {
-    if (isNumDivByTen)
-      return <span className="color_true"> is divisible by 10</span>;
-
-    return <span className="color_false">isn't divisible by 10</span>;
-  };
+  console.log(numValue);
 
   return (
     <Scaffold subTitle="Mentorship - Session 7" mainTitle="Handling Events">

@@ -6,6 +6,7 @@ import NumberHandler from './components/NumberHandler/NumberHandler';
 import Session7 from './components/Session7/Session7';
 import AppProvider from './providers/AppProvider';
 // import ThemeProvider from './providers/ThemeProvider';
+import Session7Provider from './providers/Session7Provider';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
         <NumberHandler />
       </AppProvider>
       {/* <Form /> */}
-      <Session7 />
+      <Session7Provider>
+        <Session7 />
+      </Session7Provider>
       {/* <ThemeProvider /> */}
     </div>
   );
