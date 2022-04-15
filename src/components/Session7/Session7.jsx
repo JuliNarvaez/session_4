@@ -1,10 +1,19 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Scaffold from '../scaffold/Scaffold';
 import InputConst from '../Inputs/InputConst';
 import { Session7Context } from '../../providers/Session7Provider';
 
 export default function Session7() {
-  const { handleNum, numValue, isShowing, isNumDivByTen, isNumEven } = useContext(Session7Context);
+  const { updateNumber, numValue, isNumDivByTen, isNumEven } = useContext(Session7Context);
+  const [isShowing, setIsShowing] = useState(false);
+
+  function handleNum({ code, target }) {
+    if (isShowing) setIsShowing(false);
+    if (code === 'Enter') {
+      updateNumber(target.value);
+      setIsShowing(true);
+    }
+  }
 
   const evenMessage = () => {
     if (isNumEven) return <span className="color_true">EVEN</span>;

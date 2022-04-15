@@ -5,8 +5,7 @@ import { isDivisibleByTen } from "../utils/isDivisibleByTen";
 const initialNumber = {
     numValue: 0,
     isNumEven: false,
-    isNumDivByTen: false,
-    isShowing: false
+    isNumDivByTen: false
 };
 
 export const Session7Context = createContext(initialNumber);
@@ -15,22 +14,18 @@ const Session7Provider = ({ children }) => {
     const [numValue, setNumValue] = useState(initialNumber.numValue);
     const [isNumEven, setNumEven] = useState(initialNumber.isNumEven);
     const [isNumDivByTen, setNumDivByTen] = useState(initialNumber.isNumDivByTen);
-    const [isShowing, setIsShowing] = useState(initialNumber.isShowing);
 
-    function handleNum({ code, target }) {
-        if (isShowing) setIsShowing(false);
-        if (code === 'Enter') {
-            const numberValue = Number(target.value);
+    function updateNumber(newNumb) {
+        const numberValue = Number(newNumb);
+        console.log(numberValue, newNumb);
 
-            setNumValue(numberValue);
-            setNumDivByTen(isDivisibleByTen(numberValue));
-            setNumEven(isEven(numberValue));
-            setIsShowing(true);
-        }
+        setNumValue(numberValue);
+        setNumDivByTen(isDivisibleByTen(numberValue));
+        setNumEven(isEven(numberValue));
     }
 
     return (
-        <Session7Context.Provider value={{ numValue, handleNum, isNumDivByTen, isNumEven, isShowing }}>
+        <Session7Context.Provider value={{ numValue, updateNumber, isNumDivByTen, isNumEven }}>
             {children}
         </Session7Context.Provider>
     )
