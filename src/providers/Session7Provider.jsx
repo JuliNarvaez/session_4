@@ -17,7 +17,6 @@ const Session7Provider = ({ children }) => {
 
     function updateNumber(newNumb) {
         const numberValue = Number(newNumb);
-        console.log(numberValue, newNumb);
 
         setNumValue(numberValue);
         setNumDivByTen(isDivisibleByTen(numberValue));

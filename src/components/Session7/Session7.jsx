@@ -3,6 +3,12 @@ import Scaffold from '../scaffold/Scaffold';
 import InputConst from '../Inputs/InputConst';
 import { Session7Context } from '../../providers/Session7Provider';
 
+
+const EvenMessage = ({ isNumEven }) => {
+  if (isNumEven) return <span className="color_true">EVEN</span>;
+  return <span className="color_false">ODD</span>;
+};
+
 export default function Session7() {
   const { updateNumber, numValue, isNumDivByTen, isNumEven } = useContext(Session7Context);
   const [isShowing, setIsShowing] = useState(false);
@@ -14,11 +20,6 @@ export default function Session7() {
       setIsShowing(true);
     }
   }
-
-  const evenMessage = () => {
-    if (isNumEven) return <span className="color_true">EVEN</span>;
-    return <span className="color_false">ODD</span>;
-  };
 
   const divisibleMessage = () => {
     if (isNumDivByTen)
@@ -45,7 +46,9 @@ export default function Session7() {
         <span>↵</span>
         {isShowing && (
           <div id="result">
-            {`The number ${numValue} is`} {evenMessage()} and{' '}
+            {`The number ${numValue} is`}{' '}
+            <EvenMessage isNumEven={isNumEven} />
+            {' '}and{' '}
             {divisibleMessage()}
           </div>
         )}
